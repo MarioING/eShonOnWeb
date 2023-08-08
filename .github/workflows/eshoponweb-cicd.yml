@@ -1,7 +1,7 @@
 name: eShopOnWeb Build and Test
 
 #Triggers (uncomment line below to use it)
-#on: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
@@ -78,10 +78,10 @@ jobs:
     - name: deploy
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
-        resourceGroupName: ${{ env.RESOURCE-GROUP }}
+        subscriptionId: ${{ env.f053b8d8-b1fc-47c9-b56f-6ffe5a912156 }}
+        resourceGroupName: ${{ env.rg-az400-eshoponweb-Mario }}
         template: bicep-template/webapp.bicep
-        parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
+        parameters: 'webAppName=${{ env.MarioApp }} location=${{ env.LOCATION }}'
         failOnStdErr: false   
     
     # Publish website to Azure App Service (WebApp)
